@@ -11,17 +11,19 @@
     <script src="js/toDoController.js"></script>
   </head>
 
-  <body ng-controller="ToDoController">
-    <div>
-        <form name='form'>
-          <input type='text' name='newtodo'>
-          <button >Submit</button>
+  <body >
+    <div ng-controller="ToDoController">
+        <form name='form' ng-submit='submitTodo()'>
+          <br>
+          <input type='text' name='newtodo' ng-model='newTodo' required />
+          <button ng-disabled='frm.$invalid'>Submit</button>
         </form>
-        <button >Clear Completed Tasks</button>
+        <br>
+        <button ng-click ='clearCompletedTasks()'>Clear Completed Tasks</button>
         <ul>
-          <li >
-            <input type='checkbox' />
-            <span>task 1</span>
+          <br>
+          <li ng-repeat="todo in todos">
+            <span>{{todo.title}}</span>
           </li>
         </ul>
     </div>
