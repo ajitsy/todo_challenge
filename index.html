@@ -9,6 +9,9 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="js/app.js"></script>
     <script src="js/toDoController.js"></script>
+    <style>
+    .complete{text-decoration: line-through;color:#ccc;}
+    </style>
   </head>
 
   <body >
@@ -23,7 +26,8 @@
         <ul>
           <br>
           <li ng-repeat="todo in todos">
-            <span>{{todo.title}}</span>
+            <input type='checkbox' ng-model='todo.complete' />
+            <span ng-class="{'complete':todo.complete}"> {{todo.title}}</span>
           </li>
         </ul>
     </div>

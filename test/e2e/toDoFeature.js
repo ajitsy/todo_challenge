@@ -18,4 +18,12 @@ var createButton = element(by.className('btn'));
     expect(todos.last().getText()).toEqual('task 2');
   });
 
+  it('should mark item as completed', function() {
+    inputBox.sendKeys('task 2');
+    element(by.css('button')).click();
+    expect(element(by.model('todo.complete')).isSelected()).toBeFalsy();
+    element(by.model("todo.complete")).click();
+    expect(element(by.model('todo.complete')).isSelected()).toBeTruthy();
+  });
+
 });
