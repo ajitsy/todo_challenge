@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="en" ng-app="GitUserSearch">
+<html lang="en" ng-app="ToDo">
   <head>
     <meta charset="utf-8">
-    <title>Github user search</title>
+    <title>ToDo List</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -11,9 +11,20 @@
     <script src="js/toDoController.js"></script>
   </head>
 
-  <body ng-controller="ToDoController as searchCtrl">
+  <body ng-controller="ToDoController">
     <div>
-
+        <form name='form'>
+          <input type='text' name='newtodo'>
+          <button >Submit</button>
+        </form>
+        <button >Clear Completed Tasks</button>
+        <ul>
+          <li >
+            <input type='checkbox' />
+            <span>task 1</span>
+          </li>
+        </ul>
     </div>
+
   </body>
 </html>
