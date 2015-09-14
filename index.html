@@ -23,9 +23,13 @@
         </form>
         <br>
         <button ng-click ='clearCompletedTasks()'>Clear Completed Tasks</button>
+        <button ng-click ='completedTasks()'>Completed</button>
+        <button ng-click ='allTasks()'>All</button>
+        <span ng-click="myFilter = {'complete':false}">Type 1</span> |
+
         <ul>
           <br>
-          <li ng-repeat="todo in todos">
+          <li ng-repeat="todo in todos | filter:myfilter">
             <input type='checkbox' ng-model='todo.complete' />
             <span ng-class="{'complete':todo.complete}"> {{todo.title}}</span>
           </li>
