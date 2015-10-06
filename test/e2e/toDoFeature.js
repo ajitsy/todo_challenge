@@ -19,13 +19,13 @@ var createButton = element(by.className('btn'));
 
   it('should mark item as completed', function() {
     expect(element(by.model('todo.complete')).isSelected()).toBeFalsy();
-    element(by.model("todo.complete")).click();
+    element(by.model('todo.complete')).click();
     expect(element(by.model('todo.complete')).isSelected()).toBeTruthy();
   });
 
   it('clear completed tasks', function() {
-    element(by.buttonText("Clear Completed Tasks"));
-    expect(todos.count()).toBe(1);
+    element(by.buttonText("Clear Completed Tasks")).click();
+    expect(todos.count()).toBe(0);
   });
 
 });
